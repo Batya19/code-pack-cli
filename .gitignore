@@ -1,0 +1,19 @@
+# .NET Core 
+bin/ 
+obj/ 
+.vs/ 
+.vscode/ 
+*.user 
+*.userosscache 
+*.suo 
+*.userprefs 
+[Dd]ebug/ 
+[Dd]ebugPublic/ 
+[Dd]ist/ 
+[Dd]eploy/ 
+*.cab 
+*.msi 
+*.msm 
+*.msp 
+.idea/ 
+ScaffoldingReadMe.txt 
