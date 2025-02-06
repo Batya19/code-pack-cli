@@ -36,7 +36,7 @@ removeEmptyLinesOption.AddAlias("--r");
 
 // Author Option
 var authorOption = new Option<string>("--author", "Name of the file creator");
-authorOption.AddAlias("-a");
+authorOption.AddAlias("--a");
 
 
 bundleCommand.AddOption(languageOption);
@@ -195,8 +195,12 @@ string GetUserInput(string prompt, Func<string, bool> validator)
 string[] GetSourceFiles(string directory, string language)
 {
     var extensions = language.ToLower() == "all"
-        ? new[] { ".cs", ".java", ".py", ".js", ".cpp", ".h" }
-        : GetExtensionsForLanguage(language);
+      ? new[] { ".cs", ".java", ".py", ".js", ".cpp", ".h", ".tsx", ".ts",
+              ".html", ".css", ".php", ".rb", ".swift", ".kt", ".kts",
+              ".rs", ".go", ".sh", ".bat", ".ps1", ".pl", ".pm", ".lua",
+              ".r", ".jl", ".dart", ".scala", ".m", ".v", ".sv", ".s", ".asm" }
+      : GetExtensionsForLanguage(language);
+
 
     var allFiles = Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories);
     var filteredFiles = new List<string>();
